@@ -12,6 +12,20 @@ contract Orders {
           uint256 deliveredDate;
       }
 
+  struct Payment {
+          string id;
+          address payable buyerAddress;
+          uint256 paidDate;
+          uint256 refundDate;
+      }
+
+  event OrderPaid(
+          string id,
+          address paidAddress,
+          uint256 paidAmount,
+          uint256 date
+      );
+
   address owner;
 
   // to be able to store and query orders according to order id
